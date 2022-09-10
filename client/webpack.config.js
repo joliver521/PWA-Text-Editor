@@ -17,7 +17,13 @@ module.exports = () => {
             filename: '[name].bundle.js',
             path: path.resolve(__dirname, 'dist'),
         },
-        plugins: [],
+        plugins: [
+            // Webpack plugin that generates our html file and injects our bundles
+            new HtmlWebpackPlugin({
+                template: './index.html',
+                title: 'PWA Editor',
+            }),
+        ],
 
         module: {
             rules: [],
